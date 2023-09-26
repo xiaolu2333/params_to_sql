@@ -42,7 +42,7 @@ def create(params=None):
         # 加载模板文件
         template = env.get_template('create.sql')
         # 渲染模板并传入参数
-        sql = template.render(data=params)
+        sql = template.render(data=params, add_not_exists_clause=True)
 
         # 用\n替换两个及以上个数的连续的\n
         sql = sql.replace('\n\n', '\n')

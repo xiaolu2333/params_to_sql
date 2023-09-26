@@ -129,7 +129,7 @@ COMMENT ON TABLE {{qtIdent(data.schema, data.name)}}
 {% if c.description %}
 
 COMMENT ON COLUMN {{qtIdent(data.schema, data.name, c.name)}}
-    IS {{c.description|qtLiteral}};
+    IS {{qtLiteral(c.description)}};
 {% endif %}
 {###  Add variables to column ###}
 {% if c.attoptions and c.attoptions|length > 0 %}
